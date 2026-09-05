@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Trascrizioni → Claude",
+  "version": "1.0.0",
+  "description": "Estrae la trascrizione di un video YouTube e la salva come Markdown oppure la copia per una nuova chat Claude con la skill /rielaborazione-trascrizioni.",
+  "permissions": ["activeTab", "downloads", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Estrai trascrizione YouTube"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["claude-inject.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

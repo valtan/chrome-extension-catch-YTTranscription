@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Trascrizione YouTube</title>
+    <style>
+      body {
+        width: 320px;
+        font-family: system-ui, -apple-system, sans-serif;
+        padding: 12px;
+        margin: 0;
+      }
+      h1 {
+        font-size: 14px;
+        margin: 0 0 8px;
+      }
+      #title {
+        font-size: 12px;
+        color: #444;
+        margin-bottom: 10px;
+        max-height: 3.6em;
+        overflow: hidden;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #f7f7f7;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      button:hover:not(:disabled) {
+        background: #eee;
+      }
+      #status {
+        font-size: 12px;
+        color: #666;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Trascrizione YouTube</h1>
+    <div id="title"></div>
+    <button id="saveBtn" disabled>💾 Salva come Markdown</button>
+    <button id="copyBtn" disabled>📋 Copia trascrizione</button>
+    <button id="claudeBtn" disabled>🌐 Apri in nuova chat Claude</button>
+    <div id="status">Caricamento...</div>
+    <script src="popup.js"></script>
+  </body>
+</html>
